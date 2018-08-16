@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<jnlp spec="1.0+" codebase="http://localhost:8080/" href="ContactsBook.jnlp">
+	<information>
+		<title>Contacts Book Testing</title>
+		<vendor>Dave Smith</vendor>
+		<homepage href="http://localhost:8080/" />
+		<description>Contacts Book</description>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.6+" />
+		<jar href="ContactsBook.jar" />
+	</resources>
+	<application-desc main-class="com.mavisto.examples.app.Main" />
+</jnlp>
