@@ -70,9 +70,9 @@ public class Application extends JFrame {
 	private JTextField hole16Score;
 	private JTextField hole17Score;
 	private JTextField hole18Score;
-	private JTextField outScore;
-	private JTextField inScore;
-	private JTextField totalScore;
+	private JLabel outScore;
+	private JLabel inScore;
+	private JLabel totalScore;
 	private JPanel testPanel;
 	private JLabel tmpLabel;
 
@@ -190,12 +190,11 @@ public class Application extends JFrame {
 		add(createToolBar(), BorderLayout.PAGE_START);
 		add(createListPanel(), BorderLayout.WEST);
 		add(createEditor(), BorderLayout.CENTER);
-		
+
 		add(createTabedPanel(), BorderLayout.EAST);
-		//add(createTestPanel(), BorderLayout.EAST);
+		// add(createTestPanel(), BorderLayout.EAST);
 		// add(createNewPanel(), BorderLayout.EAST);
 	}
-	
 
 	private Component createTabedPanel() {
 		JTabbedPane mainPane = new JTabbedPane();
@@ -406,7 +405,7 @@ public class Application extends JFrame {
 		JLabel hole5Points = new JLabel();
 		testPanel.add(createHoleLabel(hole5Points, tmp), "6,5");
 
-		// Hole 6		
+		// Hole 6
 		JLabel hole6Label = new JLabel();
 		testPanel.add(createHoleLabel(hole6Label, "6"), "0,6");
 		// Yards
@@ -451,10 +450,10 @@ public class Application extends JFrame {
 		// Points
 		JLabel hole7Points = new JLabel();
 		testPanel.add(createHoleLabel(hole7Points, tmp), "6,7");
-		
+
 		// Hole 8
 		JLabel hole8Label = new JLabel();
-		testPanel.add(createHoleLabel(hole8Label, "6"), "0,8");
+		testPanel.add(createHoleLabel(hole8Label, "8"), "0,8");
 		// Yards
 		JLabel hole8Yds = new JLabel();
 		testPanel.add(createHoleLabel(hole8Yds, "683"), "1,8");
@@ -477,7 +476,7 @@ public class Application extends JFrame {
 
 		// Hole 9
 		JLabel hole9Label = new JLabel();
-		testPanel.add(createHoleLabel(hole9Label, "6"), "0,9");
+		testPanel.add(createHoleLabel(hole9Label, "9"), "0,9");
 		// Yards
 		JLabel hole9Yds = new JLabel();
 		testPanel.add(createHoleLabel(hole9Yds, "693"), "1,9");
@@ -499,244 +498,252 @@ public class Application extends JFrame {
 		testPanel.add(createHoleLabel(hole9Points, tmp), "6,9");
 
 		// Hole 10
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole10Label = new JLabel("10");
-		hole10Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole10Label.setPreferredSize(new Dimension(20, 20));
-		hole10Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole10Label, "8,1");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole10Label = new JLabel();
+		testPanel.add(createHoleLabel(hole10Label, "10"), "8,1");
+		// Yards
+		JLabel hole10Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole10Yds, "693"), "9,1");
+		// Par
+		JLabel hole10Par = new JLabel();
+		testPanel.add(createHoleLabel(hole10Par, "9"), "10,1");
+		// SI
+		JLabel hole10SI = new JLabel();
+		testPanel.add(createHoleLabel(hole10SI, "14"), "11,1");
+		// Score
 		hole10Score = new JTextField();
-		hole10Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole10Score, "12,1");
+		testPanel.add(createHoleTextField(hole10Score), "12,1");
+		// Net
+		JLabel hole10Net = new JLabel();
+		String hole10NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole10Net, hole10NetScore), "13,1");
+		// Points
+		JLabel hole10Points = new JLabel();
+		testPanel.add(createHoleLabel(hole10Points, tmp), "14,1");
 
 		// Hole 11
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole11Label = new JLabel("11");
-		hole11Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole11Label.setPreferredSize(new Dimension(20, 20));
-		hole11Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole11Label, "8,2");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole11Label = new JLabel();
+		testPanel.add(createHoleLabel(hole11Label, "11"), "8,2");
+		// Yards
+		JLabel hole11Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole11Yds, "693"), "9,2");
+		// Par
+		JLabel hole11Par = new JLabel();
+		testPanel.add(createHoleLabel(hole11Par, "9"), "10,2");
+		// SI
+		JLabel hole11SI = new JLabel();
+		testPanel.add(createHoleLabel(hole11SI, "14"), "11,2");
+		// Score
 		hole11Score = new JTextField();
-		hole11Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole11Score, "12,2");
+		testPanel.add(createHoleTextField(hole11Score), "12,2");
+		// Net
+		JLabel hole11Net = new JLabel();
+		String hole11NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole11Net, hole11NetScore), "13,2");
+		// Points
+		JLabel hole11Points = new JLabel();
+		testPanel.add(createHoleLabel(hole11Points, tmp), "14,2");
 
 		// Hole 12
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole12Label = new JLabel("12");
-		hole12Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole12Label.setPreferredSize(new Dimension(20, 20));
-		hole12Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole12Label, "8,3");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole12Label = new JLabel();
+		testPanel.add(createHoleLabel(hole12Label, "12"), "8,3");
+		// Yards
+		JLabel hole12Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole12Yds, "693"), "9,3");
+		// Par
+		JLabel hole12Par = new JLabel();
+		testPanel.add(createHoleLabel(hole12Par, "9"), "10,3");
+		// SI
+		JLabel hole12SI = new JLabel();
+		testPanel.add(createHoleLabel(hole12SI, "14"), "11,3");
+		// Score
 		hole12Score = new JTextField();
-		hole12Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole12Score, "12,3");
+		testPanel.add(createHoleTextField(hole12Score), "12,3");
+		// Net
+		JLabel hole12Net = new JLabel();
+		String hole12NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole12Net, hole12NetScore), "13,3");
+		// Points
+		JLabel hole12Points = new JLabel();
+		testPanel.add(createHoleLabel(hole12Points, tmp), "14,3");
 
 		// Hole 13
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole13Label = new JLabel("13");
-		hole13Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole13Label.setPreferredSize(new Dimension(20, 20));
-		hole13Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole13Label, "8,4");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole13Label = new JLabel();
+		testPanel.add(createHoleLabel(hole13Label, "13"), "8,4");
+		// Yards
+		JLabel hole13Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole13Yds, "693"), "9,4");
+		// Par
+		JLabel hole13Par = new JLabel();
+		testPanel.add(createHoleLabel(hole13Par, "9"), "10,4");
+		// SI
+		JLabel hole13SI = new JLabel();
+		testPanel.add(createHoleLabel(hole13SI, "14"), "11,4");
+		// Score
 		hole13Score = new JTextField();
-		hole13Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole13Score, "12,4");
+		testPanel.add(createHoleTextField(hole13Score), "12,4");
+		// Net
+		JLabel hole13Net = new JLabel();
+		String hole13NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole13Net, hole13NetScore), "13,4");
+		// Points
+		JLabel hole13Points = new JLabel();
+		testPanel.add(createHoleLabel(hole13Points, tmp), "14,4");
 
 		// Hole 14
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole14Label = new JLabel("14");
-		hole14Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole14Label.setPreferredSize(new Dimension(20, 20));
-		hole14Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole14Label, "8,5");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole14Label = new JLabel();
+		testPanel.add(createHoleLabel(hole14Label, "14"), "8,5");
+		// Yards
+		JLabel hole14Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole14Yds, "693"), "9,5");
+		// Par
+		JLabel hole14Par = new JLabel();
+		testPanel.add(createHoleLabel(hole14Par, "9"), "10,5");
+		// SI
+		JLabel hole14SI = new JLabel();
+		testPanel.add(createHoleLabel(hole14SI, "14"), "11,5");
+		// Score
 		hole14Score = new JTextField();
-		hole14Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole14Score, "12,5");
+		testPanel.add(createHoleTextField(hole14Score), "12,5");
+		// Net
+		JLabel hole14Net = new JLabel();
+		String hole14NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole14Net, hole14NetScore), "13,5");
+		// Points
+		JLabel hole14Points = new JLabel();
+		testPanel.add(createHoleLabel(hole14Points, tmp), "14,5");
 
 		// Hole 15
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole15Label = new JLabel("15");
-		hole15Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole15Label.setPreferredSize(new Dimension(20, 20));
-		hole15Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole15Label, "8,6");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole15Label = new JLabel();
+		testPanel.add(createHoleLabel(hole15Label, "15"), "8,6");
+		// Yards
+		JLabel hole15Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole15Yds, "693"), "9,6");
+		// Par
+		JLabel hole15Par = new JLabel();
+		testPanel.add(createHoleLabel(hole15Par, "9"), "10,6");
+		// SI
+		JLabel hole15SI = new JLabel();
+		testPanel.add(createHoleLabel(hole15SI, "14"), "11,6");
+		// Score
 		hole15Score = new JTextField();
-		hole15Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole15Score, "12,6");
+		testPanel.add(createHoleTextField(hole15Score), "12,6");
+		// Net
+		JLabel hole15Net = new JLabel();
+		String hole15NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole15Net, hole15NetScore), "13,6");
+		// Points
+		JLabel hole15Points = new JLabel();
+		testPanel.add(createHoleLabel(hole15Points, tmp), "14,6");
 
 		// Hole 16
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole16Label = new JLabel("16");
-		hole16Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole16Label.setPreferredSize(new Dimension(20, 20));
-		hole16Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole16Label, "8,7");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole16Label = new JLabel();
+		testPanel.add(createHoleLabel(hole16Label, "16"), "8,7");
+		// Yards
+		JLabel hole16Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole16Yds, "693"), "9,7");
+		// Par
+		JLabel hole16Par = new JLabel();
+		testPanel.add(createHoleLabel(hole16Par, "9"), "10,7");
+		// SI
+		JLabel hole16SI = new JLabel();
+		testPanel.add(createHoleLabel(hole16SI, "14"), "11,7");
+		// Score
 		hole16Score = new JTextField();
-		hole16Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole16Score, "12,7");
+		testPanel.add(createHoleTextField(hole16Score), "12,7");
+		// Net
+		JLabel hole16Net = new JLabel();
+		String hole16NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole16Net, hole16NetScore), "13,7");
+		// Points
+		JLabel hole16Points = new JLabel();
+		testPanel.add(createHoleLabel(hole16Points, tmp), "14,7");
 
 		// Hole 17
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole17Label = new JLabel("17");
-		hole17Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole17Label.setPreferredSize(new Dimension(20, 20));
-		hole17Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole17Label, "8,8");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole17Label = new JLabel();
+		testPanel.add(createHoleLabel(hole17Label, "17"), "8,8");
+		// Yards
+		JLabel hole17Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole17Yds, "693"), "9,8");
+		// Par
+		JLabel hole17Par = new JLabel();
+		testPanel.add(createHoleLabel(hole17Par, "9"), "10,8");
+		// SI
+		JLabel hole17SI = new JLabel();
+		testPanel.add(createHoleLabel(hole17SI, "14"), "11,8");
+		// Score
 		hole17Score = new JTextField();
-		hole17Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole17Score, "12,8");
+		testPanel.add(createHoleTextField(hole17Score), "12,8");
+		// Net
+		JLabel hole17Net = new JLabel();
+		String hole17NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole17Net, hole17NetScore), "13,8");
+		// Points
+		JLabel hole17Points = new JLabel();
+		testPanel.add(createHoleLabel(hole17Points, tmp), "14,8");
 
 		// Hole 18
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel hole18Label = new JLabel("18");
-		hole18Label.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		hole18Label.setPreferredSize(new Dimension(20, 20));
-		hole18Label.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(hole18Label, "8,9");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
+		JLabel hole18Label = new JLabel();
+		testPanel.add(createHoleLabel(hole18Label, "18"), "8,9");
+		// Yards
+		JLabel hole18Yds = new JLabel();
+		testPanel.add(createHoleLabel(hole18Yds, "693"), "9,9");
+		// Par
+		JLabel hole18Par = new JLabel();
+		testPanel.add(createHoleLabel(hole18Par, "9"), "10,9");
+		// SI
+		JLabel hole18SI = new JLabel();
+		testPanel.add(createHoleLabel(hole18SI, "14"), "11,9");
+		// Score
 		hole18Score = new JTextField();
-		hole18Score.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(hole18Score, "12,9");
+		testPanel.add(createHoleTextField(hole18Score), "12,9");
+		// Net
+		JLabel hole18Net = new JLabel();
+		String hole18NetScore = Integer.toString(5 - 1);
+		testPanel.add(createHoleLabel(hole18Net, hole18NetScore), "13,9");
+		// Points
+		JLabel hole18Points = new JLabel();
+		testPanel.add(createHoleLabel(hole18Points, tmp), "14,9");
 
 		// Out
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel outLabel = new JLabel("Out");
-		outLabel.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		outLabel.setPreferredSize(new Dimension(20, 20));
-		outLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(outLabel, "11,10");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
-		outScore = new JTextField();
-		outScore.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(outScore, "12,10");
+		JLabel outLabel = new JLabel();
+		testPanel.add(createHoleLabel(outLabel, "Out"), "11,10");
+		outScore = new JLabel();
+		testPanel.add(createHoleLabel(outScore, "36"), "12,10");
+		// Out Net
+		JLabel outNet = new JLabel();
+		String outNetScore = Integer.toString(46 - 1);
+		testPanel.add(createHoleLabel(outNet, outNetScore), "13,10");
+		// Out Points
+		JLabel outPoints = new JLabel();
+		testPanel.add(createHoleLabel(outPoints, "38"), "14,10");
 
 		// In
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel inLabel = new JLabel("In");
-		inLabel.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		inLabel.setPreferredSize(new Dimension(20, 20));
-		inLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(inLabel, "11,11");
+		JLabel inLabel = new JLabel();
+		testPanel.add(createHoleLabel(inLabel, "In"), "11,11");
+		inScore = new JLabel();
+		testPanel.add(createHoleLabel(inScore, "36"), "12,11");
+		// In Net
+		JLabel inNet = new JLabel();
+		String inNetScore = Integer.toString(42 - 1);
+		testPanel.add(createHoleLabel(inNet, inNetScore), "13,11");
+		// Out Points
+		JLabel inPoints = new JLabel();
+		testPanel.add(createHoleLabel(inPoints, "42"), "14,11");
 
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
-		inScore = new JTextField();
-		inScore.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(inScore, "12,11");
-
+		int tmp1 = 36;
+		int tmp2 = 36;
 		// Total
-		constraints.anchor = GridBagConstraints.EAST;
-		constraints.gridx = 3;
-		constraints.gridy = 0;
-		JLabel totalLabel = new JLabel("Total");
-		totalLabel.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		totalLabel.setPreferredSize(new Dimension(20, 20));
-		totalLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		testPanel.add(totalLabel, "11,13");
-
-		constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(5, 5, 5, 5);
-		constraints.gridx = 4;
-		constraints.gridy = 0;
-		// constraints.ipadx = 100;
-		totalScore = new JTextField();
-		totalScore.setPreferredSize(new Dimension(20, 20));
-		testPanel.add(totalScore, "12,13");
+		JLabel totalLabel = new JLabel();
+		testPanel.add(createHoleLabel(totalLabel, "Total"), "11,13");
+		totalScore = new JLabel();
+		testPanel.add(createHoleLabel(totalScore, Integer.toString(tmp1 + tmp2)), "12,13");
+		// Total Net
+		JLabel totalNet = new JLabel();
+		String totalNetScore = Integer.toString(86);
+		testPanel.add(createHoleLabel(totalNet, totalNetScore), "13,13");
+		// Total Points
+		JLabel totalPoints = new JLabel();
+		testPanel.add(createHoleLabel(totalPoints, "80"), "14,13");
 
 		Vector<Component> order = new Vector<Component>(18);
 		order.add(hole1Score);
