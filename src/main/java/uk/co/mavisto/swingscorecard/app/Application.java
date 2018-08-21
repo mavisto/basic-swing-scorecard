@@ -27,6 +27,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
@@ -189,8 +190,19 @@ public class Application extends JFrame {
 		add(createToolBar(), BorderLayout.PAGE_START);
 		add(createListPanel(), BorderLayout.WEST);
 		add(createEditor(), BorderLayout.CENTER);
-		add(createTestPanel(), BorderLayout.EAST);
+		
+		add(createTabedPanel(), BorderLayout.EAST);
+		//add(createTestPanel(), BorderLayout.EAST);
 		// add(createNewPanel(), BorderLayout.EAST);
+	}
+	
+
+	private Component createTabedPanel() {
+		JTabbedPane mainPane = new JTabbedPane();
+		mainPane.setTabPlacement(JTabbedPane.LEFT);
+		mainPane.add("Round", createTestPanel());
+		mainPane.add("Course", createNewPanel());
+		return mainPane;
 	}
 
 	private Component createNewPanel() {
@@ -200,14 +212,6 @@ public class Application extends JFrame {
 		name1.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED));
 		name1.setPreferredSize(new Dimension(50, 50));
 		JButton button = new JButton("TEST Button");
-		button.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				newPanel.setVisible(false);
-				testPanel.setVisible(true);
-			}
-		});
 		newPanel.add(name1, "0,0");
 		newPanel.add(button, "0,1");
 		return newPanel;
@@ -226,14 +230,6 @@ public class Application extends JFrame {
 		tmpTxtFld.setPreferredSize(new Dimension(20, 20));
 		tmpTxtFld.setHorizontalAlignment(SwingConstants.CENTER);
 		return tmpTxtFld;
-	}
-
-	private JLabel createHoleParLabel(JLabel holePar, String text) {
-		holePar.setText(text);
-		holePar.setBorder(new SoftBevelBorder(SoftBevelBorder.LOWERED));
-		holePar.setPreferredSize(new Dimension(20, 20));
-		holePar.setHorizontalAlignment(SwingConstants.CENTER);
-		return holePar;
 	}
 
 	private Component createTestPanel() {
