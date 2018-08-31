@@ -40,7 +40,7 @@ public class NewRound {
 	public static JPanel testPanel;
 	public static JLabel tmpLabel; 
 	
-	private GolfCourse getGolfCourseDate(long courseId, long courseDataId) {
+	private GolfCourse getGolfCourseData(long courseId, long courseDataId) {
 		return null;
 		
 	}

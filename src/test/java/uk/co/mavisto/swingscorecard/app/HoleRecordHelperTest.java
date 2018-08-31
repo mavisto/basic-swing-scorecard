@@ -9,8 +9,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import uk.co.mavisto.swingscorecard.app.Contact;
-import uk.co.mavisto.swingscorecard.app.ContactsHelper;
 import uk.co.mavisto.swingscorecard.app.DbHelper;
 
 public class HoleRecordHelperTest {
